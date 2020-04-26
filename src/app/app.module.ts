@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ListSmartComponent } from './components/list/list-smart.component';
-import { ListItemComponent } from './components/list-item/list-item.component';
+import { ListItemDumbComponent } from './components/list-item/list-item-dumb.component';
 import {ListService} from './services/list.service';
 import {ListResolver} from './services/list.resolver';
 import {RouterModule} from '@angular/router';
@@ -14,14 +14,16 @@ import {DetailsService} from './services/details.service';
 import {DetailsResolver} from './services/details.resolver';
 import {ItemDetailsDumbComponent} from './components/item-details/item-details-dumb.component';
 import {ListDumbComponent} from './components/list/list-dumb.component';
+import {ItemStartDumbComponent} from './components/item-start/item-start-dumb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListSmartComponent,
-    ListItemComponent,
+    ListItemDumbComponent,
     ItemDetailsSmartComponent,
     ItemDetailsDumbComponent,
+    ItemStartDumbComponent,
     ListDumbComponent
   ],
   imports: [

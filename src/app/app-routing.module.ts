@@ -1,5 +1,5 @@
 import {RouterModule, Routes} from '@angular/router';
-import {ListItemComponent} from './components/list-item/list-item.component';
+import {ListItemDumbComponent} from './components/list-item/list-item-dumb.component';
 import {ListResolver} from './services/list.resolver';
 import {NgModule} from '@angular/core';
 import {ListSmartComponent} from './components/list/list-smart.component';
