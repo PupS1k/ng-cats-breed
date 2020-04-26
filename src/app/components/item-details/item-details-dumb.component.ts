@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Details} from '../models/details.model';
+import {Details} from '../../models/details.model';
 
 @Component({
   selector: 'app-item-details-dumb',

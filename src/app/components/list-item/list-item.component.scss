@@ -1,22 +1,22 @@
-:host {
+.item {
   display: flex;
   justify-content: space-between;
   border: 1px solid #009292;
   margin: 7px 0;
   padding: 3px;
   font-size: 18px;
+  cursor: pointer;
 
-  .item {
+  .item__info {
     display: flex;
     flex-direction: column;
-    cursor: pointer;
 
-    .item__name {
+    .name {
       font-weight: bold;
       color: #3734ff;
     }
 
-    .item__short-info {
+    .short-info {
       color: #009292;
     }
   }

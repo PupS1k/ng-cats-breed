@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs';
-import {Details} from '../models/details.model';
+import {Details} from '../../models/details.model';
 import {map} from 'rxjs/operators';
 
 @Component({
