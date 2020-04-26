@@ -1,0 +1,8 @@
+{
+  "/tz20/**": {
+    "target": "https://mrsoft.by",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
