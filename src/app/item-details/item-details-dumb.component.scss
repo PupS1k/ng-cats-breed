@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 30px;
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    color: #591f8c;
+
+    .name {
+      font-weight: bold;
+      font-size: 32px;
+    }
+
+    .short-info {
+      font-size: 22px;
+      margin: 10px 0;
+    }
+
+    .bio {
+      font-size: 18px;
+      text-align: justify;
+      width: 90%;
+    }
+  }
+
+  .photo {
+    width: 250px;
+    height: auto;
+    border-radius: 100%;
+  }
+}

@@ -9,12 +9,18 @@ import {ListResolver} from './services/list.resolver';
 import {RouterModule} from '@angular/router';
 import {AppRouting} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
+import { ItemDetailsSmartComponent } from './item-details/item-details-smart.component';
+import {DetailsService} from './services/details.service';
+import {DetailsResolver} from './services/details.resolver';
+import {ItemDetailsDumbComponent} from './item-details/item-details-dumb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    ListItemComponent
+    ListItemComponent,
+    ItemDetailsSmartComponent,
+    ItemDetailsDumbComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +28,7 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     AppRouting
   ],
-  providers: [ListService, ListResolver],
+  providers: [ListService, ListResolver, DetailsService, DetailsResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

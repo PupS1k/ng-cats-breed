@@ -1,26 +1,17 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {Observable, Subject} from 'rxjs';
+import {Component} from '@angular/core';
+import {Observable} from 'rxjs';
 import {ListService} from '../../services/list.service';
 import {ActivatedRoute} from '@angular/router';
-import {map, takeUntil} from 'rxjs/operators';
+import {map} from 'rxjs/operators';
+import {Item} from '../../models/item.model';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit, OnDestroy {
-  destroy$ = new Subject();
-  list$: Observable<any>;
+export class ListComponent {
+  list$: Observable<Item[]> = this.route.data.pipe(map(data => data.list));
 
-  constructor(private listService: ListService, private route: ActivatedRoute) { }
-
-  ngOnInit(): void {
-    this.list$ = this.route.data.pipe(takeUntil(this.destroy$), map(data => data.list));
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
-  }
+  constructor(private route: ActivatedRoute) { }
 }

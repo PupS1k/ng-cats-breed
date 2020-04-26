@@ -1,5 +1,5 @@
-<div class="item">
+<div class="item" [routerLink]="['/item', item.name, item.shortInfo,item.id]">
   <span class="item__name">{{item.name}}</span>
-  <span class="item__shortInfo">{{item.shortInfo}}</span>
+  <span class="item__short-info">{{item.shortInfo}}</span>
 </div>
 <button class="btn_close">X</button>

@@ -16,7 +16,7 @@
       color: #3734ff;
     }
 
-    .item__shortInfo {
+    .item__short-info {
       color: #009292;
     }
   }
@@ -27,6 +27,7 @@
     background: none;
     outline: none;
     border: none;
+    z-index: 100;
     color: #d66c00;
     font-weight: bold;
     cursor: pointer;
