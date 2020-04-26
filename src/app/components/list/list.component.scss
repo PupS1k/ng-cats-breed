@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .list {
+    padding: 5px 20px;
+    border-right: black 2px solid;
+  }
+
+}
