@@ -1,8 +1,8 @@
 <div class="list">
-  <app-list-item
-    *ngFor="let item of list"
+  <app-list-item-dumb
+    *ngFor="let item of list | sortList"
     [item]="item"
-  ></app-list-item>
+  ></app-list-item-dumb>
 </div>
 <div class="details">
   <router-outlet></router-outlet>

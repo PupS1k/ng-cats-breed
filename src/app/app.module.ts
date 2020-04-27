@@ -15,6 +15,7 @@ import {DetailsResolver} from './services/details.resolver';
 import {ItemDetailsDumbComponent} from './components/item-details/item-details-dumb.component';
 import {ListDumbComponent} from './components/list/list-dumb.component';
 import {ItemStartDumbComponent} from './components/item-start/item-start-dumb.component';
+import {SortListPipe} from './pipes/sortList.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {ItemStartDumbComponent} from './components/item-start/item-start-dumb.co
     ItemDetailsSmartComponent,
     ItemDetailsDumbComponent,
     ItemStartDumbComponent,
-    ListDumbComponent
+    ListDumbComponent,
+    SortListPipe
   ],
   imports: [
     BrowserModule,
