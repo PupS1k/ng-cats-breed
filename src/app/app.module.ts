@@ -15,7 +15,7 @@ import {DetailsResolver} from './services/details.resolver';
 import {ItemDetailsDumbComponent} from './components/item-details/item-details-dumb.component';
 import {ListDumbComponent} from './components/list/list-dumb.component';
 import {ItemStartDumbComponent} from './components/item-start/item-start-dumb.component';
-import {SortListPipe} from './pipes/sortList.pipe';
+import {SortListPipe} from './pipes/sort-list.pipe';
 import {ListItemSmartComponent} from './components/list-item/list-item-smart.component';
 
 @NgModule({

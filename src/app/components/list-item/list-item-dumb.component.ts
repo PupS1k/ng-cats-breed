@@ -11,6 +11,8 @@ export class ListItemDumbComponent {
 
   @Output() deleteItem = new EventEmitter<number>();
 
+  dateDelete = new Date();
+
   onDeleteItem() {
     this.deleteItem.emit(this.item.id);
   }
