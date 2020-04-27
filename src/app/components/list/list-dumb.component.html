@@ -1,9 +1,9 @@
 <div class="list">
-  <app-list-item-dumb
+  <app-list-item-smart
     *ngFor="let item of list | sortList"
     [item]="item"
     (deleteItem)="onDeleteItem($event)"
-  ></app-list-item-dumb>
+  ></app-list-item-smart>
 </div>
 <div class="details">
   <router-outlet></router-outlet>
