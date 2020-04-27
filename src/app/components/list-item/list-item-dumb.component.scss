@@ -1,4 +1,8 @@
 :host {
+  .item_active {
+    background-color: #5df9e4;
+  }
+
   @mixin base-item {
     display: flex;
     justify-content: space-between;

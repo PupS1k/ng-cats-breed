@@ -1,4 +1,5 @@
 <div
+  routerLinkActive="item_active"
   [class]="[item.isDeleted ? 'item_disabled' : 'item']"
   [routerLink]="item.isDeleted ? null : ['/item', item.name, item.shortInfo, item.id]"
 >
