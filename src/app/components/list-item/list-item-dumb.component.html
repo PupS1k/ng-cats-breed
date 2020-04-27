@@ -1,7 +1,10 @@
-<div class="item" [routerLink]="['/item', item.name, item.shortInfo,item.id]">
+<div
+  [class]="[item.isDeleted ? 'item_disabled' : 'item']"
+  [routerLink]="item.isDeleted ? null : ['/item', item.name, item.shortInfo, item.id]"
+>
   <div class="item__info">
     <span class="name">{{item.name}}</span>
     <span class="short-info">{{item.shortInfo}}</span>
   </div>
-  <button class="btn_close">X</button>
+  <button class="btn_close" (click)="onDeleteItem()">{{item.isDeleted ? 'R' : 'X'}}</button>
 </div>

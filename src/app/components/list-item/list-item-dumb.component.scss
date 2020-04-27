@@ -1,35 +1,56 @@
-.item {
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid #009292;
-  margin: 7px 0;
-  padding: 3px;
-  font-size: 18px;
-  cursor: pointer;
-
-  .item__info {
+:host {
+  @mixin base-item {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #009292;
+    margin: 7px 0;
+    padding: 3px;
+    font-size: 18px;
+    cursor: pointer;
 
-    .name {
-      font-weight: bold;
-      color: #3734ff;
+    .item__info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      .name {
+        font-weight: bold;
+        color: #3734ff;
+      }
+
+      .short-info {
+        color: #009292;
+      }
     }
 
-    .short-info {
-      color: #009292;
+    .btn_close {
+      display: flex;
+      align-self: flex-start;
+      background: none;
+      outline: none;
+      border: none;
+      z-index: 100;
+      color: #d66c00;
+      font-weight: bold;
+      cursor: pointer;
     }
   }
 
-  .btn_close {
-    display: flex;
-    align-self: flex-start;
-    background: none;
-    outline: none;
-    border: none;
-    z-index: 100;
-    color: #d66c00;
-    font-weight: bold;
-    cursor: pointer;
+  .item_disabled {
+    @include base-item;
+    border: 1px solid gray;
+    .item__info {
+      .name {
+        color: gray;
+      }
+
+      .short-info {
+        color: gray;
+      }
+    }
+  }
+
+  .item {
+    @include base-item;
   }
 }

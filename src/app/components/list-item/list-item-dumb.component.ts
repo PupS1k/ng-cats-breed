@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Item} from '../../models/item.model';
 
 @Component({
@@ -8,4 +8,10 @@ import {Item} from '../../models/item.model';
 })
 export class ListItemDumbComponent {
   @Input() item: Item;
+
+  @Output() deleteItem = new EventEmitter<number>();
+
+  onDeleteItem() {
+    this.deleteItem.emit(this.item.id);
+  }
 }

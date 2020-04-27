@@ -16,12 +16,14 @@ import {ItemDetailsDumbComponent} from './components/item-details/item-details-d
 import {ListDumbComponent} from './components/list/list-dumb.component';
 import {ItemStartDumbComponent} from './components/item-start/item-start-dumb.component';
 import {SortListPipe} from './pipes/sortList.pipe';
+import {ListItemSmartComponent} from './components/list-item/list-item-smart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListSmartComponent,
     ListItemDumbComponent,
+    ListItemSmartComponent,
     ItemDetailsSmartComponent,
     ItemDetailsDumbComponent,
     ItemStartDumbComponent,

@@ -2,6 +2,7 @@
   <app-list-item-dumb
     *ngFor="let item of list | sortList"
     [item]="item"
+    (deleteItem)="onDeleteItem($event)"
   ></app-list-item-dumb>
 </div>
 <div class="details">

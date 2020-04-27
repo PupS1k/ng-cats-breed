@@ -4,4 +4,5 @@ export interface Item {
   name: string;
   shortInfo: string;
   more: string;
+  isDeleted?: boolean;
 }
