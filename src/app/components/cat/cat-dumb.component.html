@@ -9,5 +9,5 @@
       {{cat.isDeleted ? 'deleted at ' + (dateDelete| date: 'dd.MM.yy @ HH:mm') : cat.shortInfo}}
     </span>
   </div>
-  <button class="btn_close" (click)="onDeleteCat()">{{cat.isDeleted ? 'R' : 'X'}}</button>
+  <button class="btn_close" (click)="onDeleteCat();  $event.stopPropagation();">{{cat.isDeleted ? 'R' : 'X'}}</button>
 </div>
