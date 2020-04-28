@@ -1,10 +1,11 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 import {Cat} from '../../models/cat.model';
 
 @Component({
   selector: 'app-cat-dumb',
   templateUrl: './cat-dumb.component.html',
-  styleUrls: ['./cat-dumb.component.scss']
+  styleUrls: ['./cat-dumb.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CatDumbComponent {
   @Input() cat: Cat;
