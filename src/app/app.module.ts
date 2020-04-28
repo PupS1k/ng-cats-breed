@@ -16,7 +16,7 @@ import {ListCatsDumbComponent} from './components/cats/list-cats-dumb.component'
 import {CatStartDumbComponent} from './components/cat-start/cat-start-dumb.component';
 import {SortListPipe} from './pipes/sort-list.pipe';
 import {CatSmartComponent} from './components/cat/cat-smart.component';
-import {SpinnerComponent} from './components/spinner/spinner.component';
+import {SpinnerComponent} from './shared/spinner/spinner.component';
 import {SpinnerService} from './services/spinner.service';
 import {ReqInterceptor} from './services/http.interceptor';
 
