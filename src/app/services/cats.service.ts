@@ -21,4 +21,21 @@ export class CatsService {
     return this.http.get(`/tz20/cats/${id}.json`);
   }
 
+  addIsDeleted(cats: Cat[]) {
+    return cats.map(cat => {
+      cat.isDeleted = false;
+
+      return cat;
+    });
+  }
+
+  changeIsDeleted(cats: Cat[], id: number) {
+    return cats.map(cat => {
+      if (cat.id === id) {
+        cat.isDeleted = !cat.isDeleted;
+      }
+
+      return cat;
+    });
+  }
 }

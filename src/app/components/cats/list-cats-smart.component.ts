@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {map} from 'rxjs/operators';
 import {Cat} from '../../models/cat.model';
 import {SpinnerService} from '../../services/spinner.service';
+import {CatsService} from '../../services/cats.service';
 
 @Component({
   selector: 'app-list-cats-smart',
@@ -17,27 +18,18 @@ import {SpinnerService} from '../../services/spinner.service';
 export class ListCatsSmartComponent {
   cats$ = this.route.data.pipe(
     map(data => data.cats),
-    map(cats => cats.map(cat => {
-      cat.isDeleted = false;
-
-      return cat;
-    }))
+    map(cats => this.catsService.addIsDeleted(cats))
   );
 
   isSpin$ = this.spinnerService.isSpin$;
 
-  constructor(private route: ActivatedRoute, private spinnerService: SpinnerService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private spinnerService: SpinnerService,
+    private catsService: CatsService
+  ) {}
 
   onDeleteCat(id) {
-    this.cats$ = this.cats$.pipe(map((cats: Cat[]) => {
-        return cats.map(cat => {
-          if (cat.id === id) {
-            cat.isDeleted = !cat.isDeleted;
-          }
-
-          return cat;
-        });
-      })
-    );
+    this.cats$ = this.cats$.pipe(map((cats: Cat[]) => this.catsService.changeIsDeleted(cats, id)));
   }
 }

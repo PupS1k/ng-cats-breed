@@ -5,9 +5,9 @@ import {CatsService} from './cats.service';
 
 @Injectable()
 export class CatsResolver implements Resolve<Observable<any>> {
-  constructor(private listService: CatsService) {}
+  constructor(private catsService: CatsService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>|Promise<any>|any {
-    return this.listService.fetchCats();
+    return this.catsService.fetchCats();
   }
 }
