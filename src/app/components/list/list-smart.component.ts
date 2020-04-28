@@ -1,34 +1,32 @@
-import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Component} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {map} from 'rxjs/operators';
 import {Item} from '../../models/item.model';
+import {SpinnerService} from '../../services/spinner.service';
 
 @Component({
   selector: 'app-list-smart',
   template: `
     <app-list-dumb
       [list]="list$ | async"
+      [isSpin]="isSpin$ | async"
       (deleteItem)="onDeleteItem($event)"
     ></app-list-dumb>
   `
 })
-export class ListSmartComponent implements OnInit {
-  list$: Observable<Item[]>;
+export class ListSmartComponent {
+  list$ = this.route.data.pipe(
+    map(data => data.list),
+    map(items => items.map(item => {
+      item.isDeleted = false;
 
-  constructor(private route: ActivatedRoute) {
-  }
+      return item;
+    }))
+  );
 
-  ngOnInit(): void {
-    this.list$ = this.route.data.pipe(
-      map(data => data.list),
-      map(items => items.map(item => {
-        item.isDeleted = false;
+  isSpin$ = this.spinnerService.isSpin$;
 
-        return item;
-      }))
-    );
-  }
+  constructor(private route: ActivatedRoute, private spinnerService: SpinnerService) {}
 
   onDeleteItem(id) {
     this.list$ = this.list$.pipe(map((items: Item[]) => {

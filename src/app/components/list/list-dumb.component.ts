@@ -8,6 +8,7 @@ import {Item} from '../../models/item.model';
 })
 export class ListDumbComponent {
   @Input() list: Item[];
+  @Input() isSpin: boolean;
 
   @Output() deleteItem = new EventEmitter();
 

@@ -8,7 +8,7 @@ import {ListService} from './services/list.service';
 import {ListResolver} from './services/list.resolver';
 import {RouterModule} from '@angular/router';
 import {AppRouting} from './app-routing.module';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { ItemDetailsSmartComponent } from './components/item-details/item-details-smart.component';
 import {DetailsService} from './services/details.service';
 import {DetailsResolver} from './services/details.resolver';
@@ -17,6 +17,9 @@ import {ListDumbComponent} from './components/list/list-dumb.component';
 import {ItemStartDumbComponent} from './components/item-start/item-start-dumb.component';
 import {SortListPipe} from './pipes/sort-list.pipe';
 import {ListItemSmartComponent} from './components/list-item/list-item-smart.component';
+import {SpinnerComponent} from './components/spinner/spinner.component';
+import {SpinnerService} from './services/spinner.service';
+import {ReqInterceptor} from './services/http.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import {ListItemSmartComponent} from './components/list-item/list-item-smart.com
     ItemDetailsDumbComponent,
     ItemStartDumbComponent,
     ListDumbComponent,
-    SortListPipe
+    SortListPipe,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,18 @@ import {ListItemSmartComponent} from './components/list-item/list-item-smart.com
     HttpClientModule,
     AppRouting
   ],
-  providers: [ListService, ListResolver, DetailsService, DetailsResolver],
+  providers: [
+    ListService,
+    ListResolver,
+    DetailsService,
+    DetailsResolver,
+    SpinnerService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ReqInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

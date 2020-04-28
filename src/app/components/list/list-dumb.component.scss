@@ -4,7 +4,7 @@
   justify-content: space-between;
 
   .list {
-    height: 95vh;
+    height: 100vh;
     padding: 0 20px;
     border-right: black 2px solid;
     width: 25%;
@@ -12,6 +12,7 @@
   }
 
   .details {
+    position: relative;
     width: 75%;
   }
 }
