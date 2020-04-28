@@ -1,17 +1,16 @@
 import {RouterModule, Routes} from '@angular/router';
-import {ListItemDumbComponent} from './components/list-item/list-item-dumb.component';
-import {ListResolver} from './services/list.resolver';
+import {CatsResolver} from './services/cats.resolver';
 import {NgModule} from '@angular/core';
-import {ListSmartComponent} from './components/list/list-smart.component';
-import {ItemDetailsSmartComponent} from './components/item-details/item-details-smart.component';
-import {DetailsResolver} from './services/details.resolver';
-import {ItemStartDumbComponent} from './components/item-start/item-start-dumb.component';
+import {ListCatsSmartComponent} from './components/cats/list-cats-smart.component';
+import {CatDetailsSmartComponent} from './components/cat-details/cat-details-smart.component';
+import {CatDetailsResolver} from './services/cat-details.resolver';
+import {CatStartDumbComponent} from './components/cat-start/cat-start-dumb.component';
 
 
 const listRoutes: Routes = [
-  {path: '', component: ListSmartComponent, resolve: {list: ListResolver}, children: [
-      {path: '', component: ItemStartDumbComponent},
-      {path: 'item/:name/:shortInfo/:id', component: ItemDetailsSmartComponent, resolve: {details: DetailsResolver}}
+  {path: '', component: ListCatsSmartComponent, resolve: {cats: CatsResolver}, children: [
+      {path: '', component: CatStartDumbComponent},
+      {path: 'cat/:name/:shortInfo/:id', component: CatDetailsSmartComponent, resolve: {details: CatDetailsResolver}}
     ]
   },
 ];

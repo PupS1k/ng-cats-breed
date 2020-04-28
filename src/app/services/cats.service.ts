@@ -1,20 +1,24 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
-import {Item} from '../models/item.model';
+import {Cat} from '../models/cat.model';
 
 interface ResponseData {
   basepath: string;
-  data: Item[];
+  data: Cat[];
 }
 
 @Injectable()
-export class ListService {
+export class CatsService {
   constructor(private http: HttpClient) {
   }
 
-  fetchList() {
+  fetchCats() {
     return this.http.get<ResponseData>('/tz20/list.json').pipe(map(resData => resData.data));
+  }
+
+  fetchCatDetails(id) {
+    return this.http.get(`/tz20/cats/${id}.json`);
   }
 
 }

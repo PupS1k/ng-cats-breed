@@ -1,0 +1,13 @@
+<div
+  routerLinkActive="cat_active"
+  [class]="[cat.isDeleted ? 'cat_disabled' : 'cat']"
+  [routerLink]="cat.isDeleted ? null : ['/cat', cat.name, cat.shortInfo, cat.id]"
+>
+  <div class="cat__info">
+    <span class="name">{{(cat.isDeleted ? 'Deleted ' : '') + cat.name}}</span>
+    <span class="short-info">
+      {{cat.isDeleted ? 'deleted at ' + (dateDelete| date: 'dd.MM.yy @ hh.mm') : cat.shortInfo}}
+    </span>
+  </div>
+  <button class="btn_close" (click)="onDeleteCat()">{{cat.isDeleted ? 'R' : 'X'}}</button>
+</div>

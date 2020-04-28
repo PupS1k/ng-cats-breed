@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
 
-  .list {
+  .list-cats {
     height: 100vh;
     padding: 0 20px;
     border-right: black 2px solid;
@@ -11,7 +11,7 @@
     overflow-y: scroll;
   }
 
-  .details {
+  .cat-details {
     position: relative;
     width: 75%;
   }

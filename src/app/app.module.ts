@@ -2,21 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ListSmartComponent } from './components/list/list-smart.component';
-import { ListItemDumbComponent } from './components/list-item/list-item-dumb.component';
-import {ListService} from './services/list.service';
-import {ListResolver} from './services/list.resolver';
+import { ListCatsSmartComponent } from './components/cats/list-cats-smart.component';
+import { CatDumbComponent } from './components/cat/cat-dumb.component';
+import {CatsService} from './services/cats.service';
+import {CatsResolver} from './services/cats.resolver';
 import {RouterModule} from '@angular/router';
 import {AppRouting} from './app-routing.module';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import { ItemDetailsSmartComponent } from './components/item-details/item-details-smart.component';
-import {DetailsService} from './services/details.service';
-import {DetailsResolver} from './services/details.resolver';
-import {ItemDetailsDumbComponent} from './components/item-details/item-details-dumb.component';
-import {ListDumbComponent} from './components/list/list-dumb.component';
-import {ItemStartDumbComponent} from './components/item-start/item-start-dumb.component';
+import { CatDetailsSmartComponent } from './components/cat-details/cat-details-smart.component';
+import {CatDetailsResolver} from './services/cat-details.resolver';
+import {CatDetailsDumbComponent} from './components/cat-details/cat-details-dumb.component';
+import {ListCatsDumbComponent} from './components/cats/list-cats-dumb.component';
+import {CatStartDumbComponent} from './components/cat-start/cat-start-dumb.component';
 import {SortListPipe} from './pipes/sort-list.pipe';
-import {ListItemSmartComponent} from './components/list-item/list-item-smart.component';
+import {CatSmartComponent} from './components/cat/cat-smart.component';
 import {SpinnerComponent} from './components/spinner/spinner.component';
 import {SpinnerService} from './services/spinner.service';
 import {ReqInterceptor} from './services/http.interceptor';
@@ -24,13 +23,13 @@ import {ReqInterceptor} from './services/http.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
-    ListSmartComponent,
-    ListItemDumbComponent,
-    ListItemSmartComponent,
-    ItemDetailsSmartComponent,
-    ItemDetailsDumbComponent,
-    ItemStartDumbComponent,
-    ListDumbComponent,
+    ListCatsSmartComponent,
+    CatDumbComponent,
+    CatSmartComponent,
+    CatDetailsSmartComponent,
+    CatDetailsDumbComponent,
+    CatStartDumbComponent,
+    ListCatsDumbComponent,
     SortListPipe,
     SpinnerComponent
   ],
@@ -41,10 +40,9 @@ import {ReqInterceptor} from './services/http.interceptor';
     AppRouting
   ],
   providers: [
-    ListService,
-    ListResolver,
-    DetailsService,
-    DetailsResolver,
+    CatsService,
+    CatsResolver,
+    CatDetailsResolver,
     SpinnerService,
     {
       provide: HTTP_INTERCEPTORS,

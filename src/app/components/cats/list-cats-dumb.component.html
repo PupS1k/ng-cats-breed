@@ -1,0 +1,11 @@
+<div class="list-cats">
+  <app-cat-smart
+    *ngFor="let cat of cats | sortList"
+    [cat]="cat"
+    (deleteCat)="onDeleteCat($event)"
+  ></app-cat-smart>
+</div>
+<div class="cat-details">
+  <app-spinner *ngIf="isSpin"></app-spinner>
+  <router-outlet></router-outlet>
+</div>

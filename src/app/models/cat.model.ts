@@ -1,5 +1,5 @@
 
-export interface Item {
+export interface Cat {
   id: number;
   name: string;
   shortInfo: string;
